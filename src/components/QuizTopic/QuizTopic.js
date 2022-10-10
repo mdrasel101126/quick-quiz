@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./QuizTopic.css";
 
 const QuizTopic = ({ topic }) => {
-  console.log(topic);
   const { id, name, logo } = topic;
   return (
     <div className="topic-container">
@@ -11,7 +11,9 @@ const QuizTopic = ({ topic }) => {
       </div>
       <div className="topic-info">
         <p>{name}</p>
-        <button>Start Quiz</button>
+        <Link to={`/quiz/${id}`}>
+          <button>Start Quiz</button>
+        </Link>
       </div>
     </div>
   );
