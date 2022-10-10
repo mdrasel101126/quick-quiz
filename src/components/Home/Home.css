@@ -1,0 +1,8 @@
+.nav-bar{
+    background-image: url('../../images/nav-bar-background-3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 100px 0;
+}
