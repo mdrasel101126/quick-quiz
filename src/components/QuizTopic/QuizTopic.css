@@ -1,0 +1,30 @@
+.topic-container{
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    
+}
+.topic-container img{
+    width: 96%;
+    margin: 2%;
+    border-radius: 10px;
+    background-color: rgb(185, 217, 230);
+}
+.topic-info{
+    color: rgb(7, 7, 118);
+    font-weight: bolder;
+    margin:5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.topic-info button{
+    background-color: rgb(7, 7, 118);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}

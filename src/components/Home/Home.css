@@ -6,3 +6,21 @@
     color: white;
     padding: 100px 0;
 }
+
+.topics-container{
+    margin: 10%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+
+@media only screen and (max-width:768px){
+    .topics-container{
+        display: block;
+    }
+}
+@media only screen and (max-width:1200px){
+    .topics-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
