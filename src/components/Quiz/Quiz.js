@@ -9,11 +9,14 @@ const Quiz = () => {
 
   return (
     <div>
-      <h1>Quiz of {name}</h1>
-      {questions.map((questionBlock) => (
+      <h1 style={{ textAlign: "center", color: "rgb(7, 7, 118)" }}>
+        Quiz of {name}
+      </h1>
+      {questions.map((questionBlock, index) => (
         <SingleQuiz
           key={questionBlock.id}
           questionBlock={questionBlock}
+          index={index}
         ></SingleQuiz>
       ))}
     </div>
