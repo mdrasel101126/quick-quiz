@@ -12,7 +12,6 @@ import "./Statistics.css";
 
 const Statistics = () => {
   const data = useLoaderData().data;
-  console.log(data);
   return (
     <div className="chart-container">
       <ResponsiveContainer width="100%" height={400}>
