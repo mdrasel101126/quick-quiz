@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleQuiz from "../SingleQuiz/SingleQuiz";
 import "./Quiz.css";
@@ -6,6 +6,14 @@ import "./Quiz.css";
 const Quiz = () => {
   const quizs = useLoaderData().data;
   const { name, total, questions } = quizs;
+  const [correct, setCorrect] = useState(0);
+  const [wrong, setWrong] = useState(0);
+  const handleCorrectAnswer = () => {
+    setCorrect(correct + 1);
+  };
+  const handleWrongAnswer = () => {
+    setWrong(wrong + 1);
+  };
 
   return (
     <div>
@@ -17,8 +25,15 @@ const Quiz = () => {
           key={questionBlock.id}
           questionBlock={questionBlock}
           index={index}
+          handleCorrectAnswer={handleCorrectAnswer}
+          handleWrongAnswer={handleWrongAnswer}
         ></SingleQuiz>
       ))}
+      <div>
+        <h2>Your Result</h2>
+        <p>Correct : {correct}</p>
+        <p>Incorrect : {wrong}</p>
+      </div>
     </div>
   );
 };
