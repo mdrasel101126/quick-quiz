@@ -1,0 +1,9 @@
+.error-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 5px;
+    color: rgb(7, 7, 118);
+}
