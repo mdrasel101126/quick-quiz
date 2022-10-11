@@ -1,3 +1,5 @@
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./SingleQuiz.css";
 
@@ -10,6 +12,11 @@ const SingleQuiz = ({ questionBlock, index }) => {
       <p className="question">
         Quiz {index + 1}:{question}
       </p>
+      <FontAwesomeIcon
+        title="Show Correct Answer"
+        className="eye-icon"
+        icon={faEye}
+      ></FontAwesomeIcon>
       <div className="quiz-options">
         <div className="option">
           <input type="radio" name="option" id={options[0]} />

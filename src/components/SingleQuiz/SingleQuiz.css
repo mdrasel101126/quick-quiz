@@ -4,10 +4,17 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     padding: 10px;
+    position: relative;
 }
 .quiz-options{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+}
+.eye-icon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgb(7, 7, 118);
 }
 .question{
     color: rgb(7, 7, 118);
