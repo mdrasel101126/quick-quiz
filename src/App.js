@@ -20,6 +20,8 @@ function App() {
         },
         {
           path: "/statistics",
+          loader: async () =>
+            await fetch("https://openapi.programming-hero.com/api/quiz"),
           element: <Statistics></Statistics>,
         },
         {

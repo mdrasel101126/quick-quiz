@@ -1,10 +1,29 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import {
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import "./Statistics.css";
 
 const Statistics = () => {
+  const data = useLoaderData().data;
+  console.log(data);
   return (
-    <div>
-      <h1>This is Staistics</h1>
+    <div className="chart-container">
+      <ResponsiveContainer width="100%" height={400}>
+        <LineChart data={data}>
+          <Line type="monotone" dataKey="total" stroke="#8884d8" />
+          <XAxis dataKey="name" />
+          <YAxis></YAxis>
+          <Tooltip></Tooltip>
+        </LineChart>
+      </ResponsiveContainer>
+      <h3 style={{ textAlign: "center" }}>Quiz Summary</h3>
     </div>
   );
 };
