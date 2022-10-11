@@ -23,7 +23,7 @@ const Statistics = () => {
           <Tooltip></Tooltip>
         </LineChart>
       </ResponsiveContainer>
-      <h3 style={{ textAlign: "center" }}>Quiz Summary</h3>
+      <h3 style={{ textAlign: "center" }}>Quiz Statistics</h3>
     </div>
   );
 };
