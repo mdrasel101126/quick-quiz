@@ -11,8 +11,8 @@ const SingleQuiz = ({
   handleCorrectAnswer,
   handleWrongAnswer,
 }) => {
-  console.log(questionBlock);
-  console.log(index);
+  /* console.log(questionBlock);
+  console.log(index); */
   const { id, question, options, correctAnswer } = questionBlock;
 
   const handleMatch = (id, option, correctAnswer) => {

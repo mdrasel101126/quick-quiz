@@ -6,13 +6,25 @@ import "./Quiz.css";
 const Quiz = () => {
   const quizs = useLoaderData().data;
   const { name, total, questions } = quizs;
-  const [correct, setCorrect] = useState(0);
-  const [wrong, setWrong] = useState(0);
-  const handleCorrectAnswer = () => {
-    setCorrect(correct + 1);
+  const [correct, setCorrect] = useState([]);
+  const [wrong, setWrong] = useState([]);
+  const handleCorrectAnswer = (addedId) => {
+    const remaining = wrong.filter((id) => id !== addedId);
+    const exists = correct.find((id) => id === addedId);
+    if (!exists) {
+      const newCorrect = [...correct, addedId];
+      setCorrect(newCorrect);
+      setWrong(remaining);
+    }
   };
-  const handleWrongAnswer = () => {
-    setWrong(wrong + 1);
+  const handleWrongAnswer = (addedId) => {
+    const remaining = correct.filter((id) => id !== addedId);
+    const exists = wrong.find((id) => id === addedId);
+    if (!exists) {
+      const newWrong = [...wrong, addedId];
+      setWrong(newWrong);
+      setCorrect(remaining);
+    }
   };
 
   return (
@@ -29,10 +41,11 @@ const Quiz = () => {
           handleWrongAnswer={handleWrongAnswer}
         ></SingleQuiz>
       ))}
-      <div>
+      <div className="result-container">
         <h2>Your Result</h2>
-        <p>Correct : {correct}</p>
-        <p>Incorrect : {wrong}</p>
+        <p>Total Question: {total}</p>
+        <p>Correct : {correct.length}</p>
+        <p>Incorrect : {wrong.length}</p>
       </div>
     </div>
   );
